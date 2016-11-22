@@ -1,0 +1,20 @@
+package communication;
+
+message Request {
+	required string type = 1;
+	optional string username = 2;
+	optional string password = 3;
+	optional int64 cookie = 4;
+	optional string post = 5;
+	optional string to_follow = 6;
+}
+
+message Response {
+	required string status = 1;
+	message Tweet {
+		required int64 time = 1;
+		required string content = 2;
+	}
+	optional int64 cookie = 2;
+	repeated Tweet tweets = 3;
+}
