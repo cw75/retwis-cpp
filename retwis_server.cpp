@@ -145,7 +145,6 @@ int main ()
         communication::Request req;
         req.ParseFromString(data);
         cout << "Received request: " << req.type() << "\n";
-        cout << req.password() << "\n";
         string result = process_request(req, user_table, user_cookie, cookie_user);
         //  Send reply back to client
         zmq_msg_t msg;
